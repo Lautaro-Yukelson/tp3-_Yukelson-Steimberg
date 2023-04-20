@@ -1,0 +1,15 @@
+C:\Users\lyuke\Desktop\Proyectos\ORT\tp3-_Yukelson-Steimberg\obj\Debug\net7.0\tp3-_Yukelson-Steimberg.csproj.AssemblyReference.cache
+C:\Users\lyuke\Desktop\Proyectos\ORT\tp3-_Yukelson-Steimberg\obj\Debug\net7.0\tp3-_Yukelson-Steimberg.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lyuke\Desktop\Proyectos\ORT\tp3-_Yukelson-Steimberg\obj\Debug\net7.0\tp3-_Yukelson-Steimberg.AssemblyInfoInputs.cache
+C:\Users\lyuke\Desktop\Proyectos\ORT\tp3-_Yukelson-Steimberg\obj\Debug\net7.0\tp3-_Yukelson-Steimberg.AssemblyInfo.cs
+C:\Users\lyuke\Desktop\Proyectos\ORT\tp3-_Yukelson-Steimberg\obj\Debug\net7.0\tp3-_Yukelson-Steimberg.csproj.CoreCompileInputs.cache
+C:\Users\lyuke\Desktop\Proyectos\ORT\tp3-_Yukelson-Steimberg\bin\Debug\net7.0\tp3-_Yukelson-Steimberg.exe
+C:\Users\lyuke\Desktop\Proyectos\ORT\tp3-_Yukelson-Steimberg\bin\Debug\net7.0\tp3-_Yukelson-Steimberg.deps.json
+C:\Users\lyuke\Desktop\Proyectos\ORT\tp3-_Yukelson-Steimberg\bin\Debug\net7.0\tp3-_Yukelson-Steimberg.runtimeconfig.json
+C:\Users\lyuke\Desktop\Proyectos\ORT\tp3-_Yukelson-Steimberg\bin\Debug\net7.0\tp3-_Yukelson-Steimberg.dll
+C:\Users\lyuke\Desktop\Proyectos\ORT\tp3-_Yukelson-Steimberg\bin\Debug\net7.0\tp3-_Yukelson-Steimberg.pdb
+C:\Users\lyuke\Desktop\Proyectos\ORT\tp3-_Yukelson-Steimberg\obj\Debug\net7.0\tp3-_Yukelson-Steimberg.dll
+C:\Users\lyuke\Desktop\Proyectos\ORT\tp3-_Yukelson-Steimberg\obj\Debug\net7.0\refint\tp3-_Yukelson-Steimberg.dll
+C:\Users\lyuke\Desktop\Proyectos\ORT\tp3-_Yukelson-Steimberg\obj\Debug\net7.0\tp3-_Yukelson-Steimberg.pdb
+C:\Users\lyuke\Desktop\Proyectos\ORT\tp3-_Yukelson-Steimberg\obj\Debug\net7.0\tp3-_Yukelson-Steimberg.genruntimeconfig.cache
+C:\Users\lyuke\Desktop\Proyectos\ORT\tp3-_Yukelson-Steimberg\obj\Debug\net7.0\ref\tp3-_Yukelson-Steimberg.dll
