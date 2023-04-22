@@ -108,11 +108,44 @@
     }
 
     void buscarCliente(){
-
+        Console.Clear();
+        int idBuscar = ingresarEntero("Ingres el ID del Cliente que desea buscar");
+        Cliente resultado = miTicketera.buscarCliente(idBuscar);
+        if (resultado != null){
+            Console.WriteLine("Información del cliente:");
+            Console.WriteLine("   - DNI: " + resultado.DNI);
+            Console.WriteLine("   - Apellido: " + resultado.Apellido);
+            Console.WriteLine("   - Nombre: " + resultado.Nombre);
+            Console.WriteLine("   - Fecha de Inscripcion: " + resultado.FechaInscripcion);
+            Console.WriteLine("   - Tipo de Entrada: " + resultado.TipoEntrada);
+            Console.WriteLine("   - Total Abonado: $" + resultado.TotalAbonado);
+        } else {
+            Console.WriteLine("No existe ningun cliente con ese ID");
+        }
+        Console.WriteLine("Presione una telca para continuar...");
+        Console.ReadKey();
     }
 
     void cambiarEntrada(){
-        
+        Console.Clear();
+        int id = ingresarEntero("Ingrese el ID sobre el que quiere modificar la entrada");
+        Console.WriteLine("Ingrese a que entrada quiere actualizar");
+        Console.WriteLine("1. Dia 1 - $15.000");
+        Console.WriteLine("2. Dia 2 - $30.000");
+        Console.WriteLine("3. Dia 3 - $10.000");
+        Console.WriteLine("4. Full Pass - $40.000");
+        int aCambiar = int.Parse(Console.ReadLine());
+        while(aCambiar < 1 || aCambiar > 4) aCambiar = ingresarEntero("Opcion Invalida, porfavor ingrese una opcion del menu");
+        Dictionary<int, int> dicPrecios = new Dictionary<int, int>(){
+        { 1, 15000 },
+        { 2, 30000 },
+        { 3, 10000 },
+        { 4, 40000 }
+        };
+        if (miTicketera.cambiarEntrada(id, aCambiar, dicPrecios[aCambiar])) Console.WriteLine("Entrada moficada con exito");
+        else Console.WriteLine("No se pudo cambiar la entrada");
+        Console.WriteLine("Presione una tecla para continuar...");
+        Console.ReadKey();
     }
 
 

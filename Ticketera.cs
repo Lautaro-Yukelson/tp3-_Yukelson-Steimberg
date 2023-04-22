@@ -14,16 +14,16 @@ class Ticketera {
         return id;
     }
 
-    Cliente buscarCliente(int idEntrada){
+    public Cliente buscarCliente(int idEntrada){
         if (dicClientes.ContainsKey(idEntrada)) return dicClientes[idEntrada];
         else return null;
     }
-    public bool cambiarEntrada(int id, int tipo, int total){
+    public bool cambiarEntrada(int id, int tipo, int importeNueva){
         bool pudo = false;
-        if (dicClientes[id].TotalAbonado >= total){
+        if (dicClientes[id].TotalAbonado >= importeNueva){
             pudo = true;
             dicClientes[id].TipoEntrada = tipo;
-            dicClientes[id].TotalAbonado = total;
+            dicClientes[id].TotalAbonado = importeNueva;
         }
         return pudo;
         

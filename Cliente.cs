@@ -1,8 +1,8 @@
 using System;
 class Cliente{
     public int DNI {get; private set;}
-    string Apellido {get; set;}
-    string Nombre {get; set;}
+    public string Apellido {get; private set;}
+    public string Nombre {get; private set;}
     public DateTime FechaInscripcion {get; set;}
     public int TipoEntrada {get; set;}
     public int TotalAbonado {get; set;}
