@@ -1,6 +1,13 @@
 using System;
 class Ticketera {
     private Dictionary<int, Cliente> dicClientes = new Dictionary<int, Cliente>();
+    public Dictionary<int, int> dicPrecios = new Dictionary<int, int>(){
+        { 1, 15000 },
+        { 2, 30000 },
+        { 3, 10000 },
+        { 4, 40000 },
+        { 5, 50000 }
+    };
     private int ultimoIdEntrada = 1;
 
     public int devolverUltimoID() {
@@ -30,41 +37,31 @@ class Ticketera {
     }
     public List<string> EstadisticasTicketera(){
         List<string> listaEstadisticas = new List<string>();
-        int tipo1, tipo2, tipo3, tipo4, rTipo1, rTipo2, rTipo3, rTipo4, total;
-        tipo1 = tipo2 = tipo3 = tipo4 = rTipo1 = rTipo2 = rTipo3 = rTipo4 = 0;
-        total = dicClientes.Count();
-        for (int i = 1; i<=dicClientes.Count(); i++){
-            switch(dicClientes[i].TipoEntrada){
-                case 1:
-                    tipo1++;
-                    rTipo1 += dicClientes[i].TotalAbonado;
-                    break;
-                case 2:
-                    tipo2++;
-                    rTipo2 += dicClientes[i].TotalAbonado;
-                    break;
-                case 3:
-                    tipo3++;
-                    rTipo3 += dicClientes[i].TotalAbonado;
-                    break;
-                case 4:
-                    tipo4++;
-                    rTipo4 += dicClientes[i].TotalAbonado;
-                    break;
-            }
+        int total;
+        int[] tipos = new int[dicPrecios.Count()];
+        for (int i = 0; i<tipos.Length; i++){
+            tipos[i] = 0; 
         }
-        listaEstadisticas.Add("Clientes inscriptos: " + dicClientes.Count());
+        for (int i = 1; i<=dicClientes.Count(); i++){
+            tipos[dicClientes[i].TipoEntrada-1]++;
+        }
+        total = dicClientes.Count();
+        listaEstadisticas.Add("Clientes inscriptos: " + total);
         listaEstadisticas.Add("Porcantaje de entradas");
-        listaEstadisticas.Add("   - Dia 1: " + tipo1 / total * 100 + "%");
-        listaEstadisticas.Add("   - Dia 2: " + tipo2 / total * 100 + "%");
-        listaEstadisticas.Add("   - Dia 3: " + tipo3 / total * 100 + "%");
-        listaEstadisticas.Add("   - Full Pass: " + tipo4 / total * 100 + "%");
+        for (int i = 0; i<dicPrecios.Count()-1; i++){
+            listaEstadisticas.Add("   - Dia " + (i+1) + ": " + (tipos[i] * 100 / total) + "%");
+        }
+        listaEstadisticas.Add("   - Full Pass: " + tipos[dicPrecios.Count()-1] * 100 / total + "%");
         listaEstadisticas.Add("Recaudacion de cada tipo");
-        listaEstadisticas.Add("   - Dia 1: $" + rTipo1);
-        listaEstadisticas.Add("   - Dia 2: $" + rTipo2);
-        listaEstadisticas.Add("   - Dia 3: $" + rTipo3);
-        listaEstadisticas.Add("   - Full Pass: $" + rTipo4);
-        listaEstadisticas.Add("Recaudacion Total: $" + (rTipo1 + rTipo2 + rTipo3 + rTipo4));
+        for (int i = 0; i<dicPrecios.Count()-1; i++){
+            listaEstadisticas.Add("   - Dia " + (i+1) + ": $" + (tipos[i] * dicPrecios[i+1]));
+        }
+        listaEstadisticas.Add("   - Full Pass: $" + tipos[dicPrecios.Count()-1] * dicPrecios[dicPrecios.Count()]);
+        int recauTotal = 0;
+        for (int i = 0; i<tipos.Length; i++){
+            recauTotal += tipos[i] * dicPrecios[i+1];
+        }
+        listaEstadisticas.Add("Recaudacion Total: $" + recauTotal);
         return listaEstadisticas; 
     }
 }

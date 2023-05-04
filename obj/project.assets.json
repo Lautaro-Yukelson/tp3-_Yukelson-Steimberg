@@ -8,24 +8,31 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\lyuke\\.nuget\\packages\\": {}
+    "C:\\Users\\47434208\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lyuke\\Desktop\\Proyectos\\ORT\\tp3-_Yukelson-Steimberg\\tp3-_Yukelson-Steimberg.csproj",
+      "projectUniqueName": "Z:\\2023\\Programacion\\Github\\tp3-_Yukelson-Steimberg\\tp3-_Yukelson-Steimberg.csproj",
       "projectName": "tp3-_Yukelson-Steimberg",
-      "projectPath": "C:\\Users\\lyuke\\Desktop\\Proyectos\\ORT\\tp3-_Yukelson-Steimberg\\tp3-_Yukelson-Steimberg.csproj",
-      "packagesPath": "C:\\Users\\lyuke\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lyuke\\Desktop\\Proyectos\\ORT\\tp3-_Yukelson-Steimberg\\obj\\",
+      "projectPath": "Z:\\2023\\Programacion\\Github\\tp3-_Yukelson-Steimberg\\tp3-_Yukelson-Steimberg.csproj",
+      "packagesPath": "C:\\Users\\47434208\\.nuget\\packages\\",
+      "outputPath": "Z:\\2023\\Programacion\\Github\\tp3-_Yukelson-Steimberg\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\lyuke\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\47434208\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -59,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

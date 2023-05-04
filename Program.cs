@@ -1,9 +1,6 @@
-﻿    using System;
-
-    bool habilitado = false;
+﻿    bool habilitado = false;
     Ticketera miTicketera = new Ticketera();
     menu();
-
 
     void menu(){
         Console.Clear();
@@ -52,38 +49,22 @@
                 menu();
                 break;
             case 5:
-                Console.Clear();
-                Console.WriteLine("Saliendo del programa...");
-                Environment.Exit(-1);
+                salir();
                 break;
         }
     }
 
     void nuevaIncripcion(){
-        Dictionary<int, int> dicPrecios = new Dictionary<int, int>(){
-        { 1, 15000 },
-        { 2, 30000 },
-        { 3, 10000 },
-        { 4, 40000 }
-        };
         Console.Clear();
         Console.WriteLine("**********************************");
         Console.WriteLine("Gracas por comenzar tu instripcion");
         Console.WriteLine("**********************************");
         Console.WriteLine("Eliga una opción para continuar");
-        Console.WriteLine("1. Dia 1 - $15.000");
-        Console.WriteLine("2. Dia 2 - $30.000");
-        Console.WriteLine("3. Dia 3 - $10.000");
-        Console.WriteLine("4. Full Pass - $40.000");
-        Console.WriteLine("5. Salir");
+        mostrarEntradas();
         int opcion = int.Parse(Console.ReadLine());
-        while (opcion < 1 || opcion > 5) opcion = ingresarEntero("Esa opcion no existe, favor de ingresar una valida");
-        if (opcion == 5){
-            Console.Clear();
-            Console.WriteLine("Saliendo del programa...");
-            Environment.Exit(-1);
-        }
-        int totalABonado = dicPrecios[opcion];
+        while(opcion < 1 || opcion > miTicketera.dicPrecios.Count()+1) opcion = ingresarEntero("Opcion Invalida, porfavor ingrese una opcion del menu");
+        if (opcion == miTicketera.dicPrecios.Count()+1) salir();
+        int totalABonado = miTicketera.dicPrecios[opcion];
         Console.WriteLine("----------------------------------");
         Console.WriteLine("Perfecto, ahora sus datos");
         int dni = ingresarEntero("Ingrese su DNI");
@@ -99,9 +80,10 @@
     }
 
     void estadisticasEvento(){
+        Console.Clear();
         List<string> listaPImprimir = miTicketera.EstadisticasTicketera();
-        for (int i = 0; i<listaPImprimir.Count(); i++){
-            Console.WriteLine(listaPImprimir[i]);
+        foreach (string hola in listaPImprimir){
+            Console.WriteLine(hola);
         }
         Console.WriteLine("Presione una tecla para continuar...");
         Console.ReadKey();
@@ -130,24 +112,30 @@
         Console.Clear();
         int id = ingresarEntero("Ingrese el ID sobre el que quiere modificar la entrada");
         Console.WriteLine("Ingrese a que entrada quiere actualizar");
-        Console.WriteLine("1. Dia 1 - $15.000");
-        Console.WriteLine("2. Dia 2 - $30.000");
-        Console.WriteLine("3. Dia 3 - $10.000");
-        Console.WriteLine("4. Full Pass - $40.000");
+        mostrarEntradas();
         int aCambiar = int.Parse(Console.ReadLine());
-        while(aCambiar < 1 || aCambiar > 4) aCambiar = ingresarEntero("Opcion Invalida, porfavor ingrese una opcion del menu");
-        Dictionary<int, int> dicPrecios = new Dictionary<int, int>(){
-        { 1, 15000 },
-        { 2, 30000 },
-        { 3, 10000 },
-        { 4, 40000 }
-        };
-        if (miTicketera.cambiarEntrada(id, aCambiar, dicPrecios[aCambiar])) Console.WriteLine("Entrada moficada con exito");
+        while(aCambiar < 1 || aCambiar > miTicketera.dicPrecios.Count()+1) aCambiar = ingresarEntero("Opcion Invalida, porfavor ingrese una opcion del menu");
+        if (aCambiar == miTicketera.dicPrecios.Count()+1) salir();
+        if (miTicketera.cambiarEntrada(id, aCambiar, miTicketera.dicPrecios[aCambiar])) Console.WriteLine("Entrada moficada con exito");
         else Console.WriteLine("No se pudo cambiar la entrada");
         Console.WriteLine("Presione una tecla para continuar...");
         Console.ReadKey();
     }
 
+    void mostrarEntradas(){
+        int i;
+        for (i = 1; i<miTicketera.dicPrecios.Count(); i++){
+            Console.WriteLine(i + ". Dia " + i + " - " + "$" + miTicketera.dicPrecios[i]);
+        }
+        Console.WriteLine(i + ". Full Pass - " + "$" + miTicketera.dicPrecios[miTicketera.dicPrecios.Count()]);
+        Console.WriteLine((i+1) + ". Salir");
+    }
+
+    void salir(){
+        Console.Clear();
+        Console.WriteLine("Saliendo del programa...");
+        Environment.Exit(-1);
+    }
 
     int ingresarEntero(string txt){
         Console.WriteLine(txt);
